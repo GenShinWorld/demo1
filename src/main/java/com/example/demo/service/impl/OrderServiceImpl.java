@@ -14,7 +14,10 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderDao orderDao;
 
-
+    @Override
+    public List<Order> queryByTime() {
+        return orderDao.queryByTime();
+    }
 
     @Override
     public List<Order> queryall(Integer pageNum,Integer pageSize) {

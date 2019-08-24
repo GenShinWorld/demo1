@@ -13,12 +13,13 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
-    public User login(){
-        return null;
-    }
+
 
     @Override
     public List<User> selectall(String id) {
         return userDao.selectall(id);
+    }
+    public User login(){
+        return null;
     }
 }

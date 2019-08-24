@@ -24,6 +24,12 @@ public class UserApi {
         userService.login();
         return null;
     }
+
+    /**
+     * 根据用户id查询用户信息
+     * @param id
+     * @return
+     */
     @RequestMapping("/queryall")
     public Result queryall(String id){
         Result result;

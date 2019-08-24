@@ -13,14 +13,20 @@
 	select * from orders where return_time is  null
 </select>
 	<select id="queryById" resultType="com.example.demo.entity.Order">
-		select * from orders
+		SELECT orders.* from orders
+		left join car  on orders.carId=car.carId
+		left join category on car.categoryId=category.categoryId
+		left join users  on orders.userId=users.userId
 		<where>
 			<if test="userId !=null and userId!=''">
-				userId=#{userId}
+				users.userName=#{userId}
 			</if>
 			<if test="carId !=null and carId!=''">
-				and carId=#{carId}
+				and category.categoryName=#{carId}
 			</if>
 		</where>
+	</select>
+	<select id="queryByTime" resultType="com.example.demo.entity.Order">
+		select * from orders
 	</select>
 </mapper>
